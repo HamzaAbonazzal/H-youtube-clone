@@ -15,7 +15,7 @@ export const App: React.FC = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
-        <Router>
+        <Router basename={import.meta.env.BASE_URL}>
           <div className="min-h-screen bg-white dark:bg-dark-blue text-slate-900 dark:text-slate-100">
             <Navbar />
             <main>
