@@ -1,0 +1,68 @@
+/*
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+ إعدادات ألوان الوضع النهاري (الافتراضي) 
+html,
+body {
+  background-color: #ffffff;
+  color: #0f0f0f;
+  min-height: 100vh;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+ إعدادات ألوان الوضع الليلي (عند تفعيل .dark) 
+html.dark,
+html.dark body {
+  background-color: #0f0f0f !important;
+  color: #ffffff !important;
+}
+
+ إصلاح خلفيات وألوان بطاقات الفيديوهات وشريط الملاحة في الوضع الداكن 
+html.dark nav,
+html.dark main,
+html.dark div {
+  border-color: #272727 !important;
+}
+
+html.dark h3,
+html.dark h2,
+html.dark h1 {
+  color: #ffffff !important;
+}
+
+html.dark p,
+html.dark span {
+  color: #aaaaaa !important;
+} */
+
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-dark-blue: #0b132b;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-slate-900 transition-colors duration-200 min-h-screen;
+  }
+
+  /* ألوان الوضع الداكن الجديدة (أزرق داكن جذاب) */
+  html.dark body {
+    background-color: #0b132b !important;
+    /* خلفية أزرق داكن */
+    color: #f1f5f9 !important;
+  }
+}
+* {
+  unicode-bidi: plaintext;
+  text-align: start;
+}
+
+button {
+  cursor: pointer;
+}
